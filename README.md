@@ -6,15 +6,19 @@ A modern, production-ready template for building full-stack React applications u
 
 ## Features
 
-- 🚀 Server-side rendering
+- ~🚀 Server-side rendering~ **SINGLE PAGE APPLICATION ONLY**
 - ⚡️ Hot Module Replacement (HMR)
 - 📦 Asset bundling and optimization
 - 🔄 Data loading and mutations
-- 🔒 TypeScript by default
+- ~🔒TypeScript by default~ (ejected from typescript)
 - 🎉 TailwindCSS for styling
 - 📖 [React Router docs](https://reactrouter.com/)
 
 ## Getting Started
+
+### PREREQUISITE 
+- Node v20+
+- React v19
 
 ### Installation
 
@@ -54,11 +58,16 @@ docker build -t my-app .
 # Run the container
 docker run -p 3000:3000 my-app
 ```
+
 ### DIY Deployment
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+THIS IS ONLY FOR SPA purposes.. **DONT WRITE SERVER SIDE CODE**
 
 Make sure to deploy the output of `npm run build`
+
+## Static host deployment 
+    run `npm run build` 
+    copy the build folder content to your static host server
 
 ```
 ├── app (root folder) 
@@ -84,7 +93,8 @@ This template comes with [Tailwind CSS](https://tailwindcss.com/) already config
 ---
 
 ## DEV NOTES
-THIS IS THE INITIAL SETUP FOR THIS PROJECT 
+
+THIS IS THE INITIAL SETUP FOR THIS PROJECT
 FEEL FREE TO COMMIT ANYTING IN `master` branch
 
 Built with ❤️ using React Router.
