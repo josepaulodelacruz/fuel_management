@@ -72,13 +72,14 @@ Make sure to deploy the output of `npm run build`
 ```
 ├── app (root folder) 
 │   ├── Components/   Global reusable components that can be use in different pages 
-│   ├── Constants/ Static/hard coded text,colors,themes  
-│   ├── Hooks/ events folder for calling state management or api  
+│   ├── Constants/ Static/hard coded text,colors,themes or data
+│   ├── Hooks/ events folder for calling state or api  
 │   ├── Layouts / Layouts   
 │   ├── Pages / Primary Page 
 │   ├── <Page_name> / Primary Page 
-│   ├── ├── index.jsx / 
-│   ├── routes.ts / declare routes  
+│   |   ├── Components / Local Component folder to only be use on that specific page 
+│   |   └── index.jsx / 
+│   └── routes.ts / declare routes  
 ├── package.json
 ├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
 ├── build/
