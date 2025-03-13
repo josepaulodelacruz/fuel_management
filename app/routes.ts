@@ -13,5 +13,4 @@ export default [
     route(StringRoutes.dashboard, "./Pages/Dashboard/index.jsx"),
     route(StringRoutes.fuelManagement, "Pages/FuelManagement.jsx")
   ])
-
 ] satisfies RouteConfig;
