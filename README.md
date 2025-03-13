@@ -87,6 +87,40 @@ Make sure to deploy the output of `npm run build`
 │   └── server/    # this is disabled
 ```
 
+## Sample Routing 
+
+- offical docs: https://reactrouter.com/start/framework/routing
+
+Routes are configured in app/routes.ts. Each route has two required parts: a URL pattern to match the URL, and a file path to the route module that defines its behavior.
+
+```
+import {
+  type RouteConfig,
+  route,
+  index,
+  layout,
+  prefix,
+} from "@react-router/dev/routes";
+
+export default [
+  index("./home.tsx"),
+  route("about", "./about.tsx"),
+
+  layout("./auth/layout.tsx", [
+    route("login", "./auth/login.tsx"),
+    route("register", "./auth/register.tsx"),
+  ]),
+
+  ...prefix("concerts", [
+    index("./concerts/home.tsx"),
+    route(":city", "./concerts/city.tsx"),
+    route("trending", "./concerts/trending.tsx"),
+  ]),
+] satisfies RouteConfig;
+
+```
+
+
 ## Styling
 
 This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
