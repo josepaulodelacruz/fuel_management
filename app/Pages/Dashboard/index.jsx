@@ -1,5 +1,5 @@
 import Navbar from "~/Components/Navbar"
-import DashboardLayout from "~/Layouts/DasboardLayout"
+import DashboardLayout from "~/Layouts/DashboardLayout"
 
 const Dashboard = () => {
   return (
