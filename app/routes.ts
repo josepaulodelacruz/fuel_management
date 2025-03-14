@@ -10,7 +10,7 @@ export default [
    */
   layout("./Layouts/DasboardLayout.jsx", [
     //initial dashboard page
-    route(StringRoutes.dashboard, "./Pages/Dashboard/index.jsx")
+    route(StringRoutes.dashboard, "./Pages/Dashboard/index.jsx"),
+    route(StringRoutes.fuelManagement, "Pages/FuelManagement.jsx")
   ])
-  
 ] satisfies RouteConfig;
