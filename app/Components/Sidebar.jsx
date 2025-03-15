@@ -44,7 +44,7 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <nav className="flex-1 overflow-y-auto">
+      <nav className="flex-1 ">
         <ul>
           <AdminNavItem />
           <NavItem
