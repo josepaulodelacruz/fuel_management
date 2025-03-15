@@ -16,7 +16,8 @@ A modern, production-ready template for building full-stack React applications u
 
 ## Getting Started
 
-### PREREQUISITE 
+### PREREQUISITE
+
 - Node v20+
 - React v19
 
@@ -65,29 +66,34 @@ THIS IS ONLY FOR SPA purposes.. **DONT WRITE SERVER SIDE CODE**
 
 Make sure to deploy the output of `npm run build`
 
-## Static host deployment 
-    run `npm run build` 
+## Static host deployment
+
+    run`npm run build`
     copy the build folder content to your static host server
 
 ```
 ├── app (root folder) 
-│   ├── Components/   Global reusable components that can be use in different pages 
-│   ├── Constants/ Static/hard coded text,colors,themes or data
-│   ├── Hooks/ events folder for calling state or api  
+│   ├── Components//   Global reusable components that can be use in different pages 
+│   ├── Constants// Static/hard coded text,colors,themes or data
+│   ├── Hooks//events folder for calling state or api   
+│   | 	├── <Auth> //name the folder of what it's purpose, all the api call or any state events in folder
+│   |	|   ├── useAuth.js // saving the details of the user inside the state
+│   |	|   ├── useLoginMutation.js // hook for calling apis
+│   |	|   └── useCreateUser.js
 │   ├── Layouts / Layouts   
 │   ├── Pages / Primary Page 
-│   ├── <Page_name> / Primary Page 
-│   |   ├── Components / Local Component folder to only be use on that specific page 
-│   |   └── index.jsx / 
+│   ├── <Page_name> // Primary Page 
+│   |   ├── Components // Local Component folder to only be use on that specific page 
+│   |   └── index.jsx // 
 │   └── routes.ts / declare routes  
 ├── package.json
 ├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
 ├── build/
-│   ├── client/    # Static assets
-│   └── server/    # this is disabled
+│   ├── client//   # Static assets
+│   └── server//    # this is disabled
 ```
 
-## Sample Routing 
+## Sample Routing
 
 - offical docs: https://reactrouter.com/start/framework/routing
 
@@ -120,6 +126,40 @@ export default [
 
 ```
 
+## Hooks
+
+FOR REACT QUERY STANDARD NAMING CONVENTION FOR IT'S HOOKS
+
+**Strctly adhere to this convention for align code of the collaborators and easy maintainability**
+
+1. **For Fetching Data** :
+
+* `useQuery` ** hooks** : Use the prefix `use` followed by a descriptive name of the resource being fetched.Example:
+  * `useUsers` for fetching user data.
+  * `useUserDetails` for fetching details of a single user.
+
+2. **For Mutating Data** :
+
+* `useMutation` ** hooks** : Use the prefix `use` followed by an action-oriented verb and the name of the resource.Example:
+  * `useAddUser` for adding a user.
+  * `useDeleteUser` for deleting a user.
+  * `useUpdateProfile` for updating a user's profile.
+
+3. **For Query Keys** :
+
+When defining **query keys** for identifying queries, they’re often arrays where:
+
+* The first element is a descriptive string (e.g., `'users'`).
+* Additional elements represent parameters or identifiers (e.g., `['users', userId]` for a single user query).
+
+4. **For Custom Query Hooks** :
+
+* Create custom hooks by combining the resource name and operation type.Example:
+
+  * `useFetchPosts` (combining `fetch` and the resource `posts`).
+  * `useCreatePost` for creating a new post.
+
+**official docs: https://tanstack.com/query/latest/docs/framework/react/quick-start**
 
 ## Styling
 
