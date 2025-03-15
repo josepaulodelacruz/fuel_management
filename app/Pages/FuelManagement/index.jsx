@@ -12,7 +12,7 @@ const FuelManagement = () => {
         /> 
 
       <div className="p-6">
-        <div className="flex space-x-4 border-b mb-4">
+        <div className="flex space-x-4 mb-4">
           <NavLink
             to={`/${StringRoutes.fuelManagement}`}
             className={({ isActive }) =>
