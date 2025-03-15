@@ -1,9 +1,11 @@
 
 class StringRoutes {
 
-  static dev = 'dev';
-  static dashboard = 'dashboard';
+  static dashboard = '/';
   static fuelManagement = 'fuelManagement';
+  static fuelPrice = 'fuelManagement/fuelPrice';
+  static fuelDelivery = 'fuelManagement/fuelDelivery';
+  static lubricants = 'fuelManagement/lubricants';
 }
 
 export default StringRoutes;

@@ -1,4 +1,5 @@
-import React from 'react'
+import { NavLink } from "react-router-dom";
+import StringRoutes from "~/Constants/StringRoutes"; 
 import {
   UserIcon,
   LayoutDashboardIcon,
@@ -6,7 +7,6 @@ import {
   FuelIcon,
   WrenchIcon,
   PackageIcon,
-  Settings2Icon,
   Users2Icon,
   MapPinIcon,
   GlobeIcon,
@@ -129,5 +129,4 @@ const AdminNavItem = () => {
   )
 }
 
-export default Sidebar
-
+export default Sidebar;
