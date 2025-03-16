@@ -11,6 +11,9 @@ export default [
   layout("./Layouts/DasboardLayout.jsx", [
     //initial dashboard page
     route(StringRoutes.dashboard, "./Pages/Dashboard/index.jsx"),
-    route(StringRoutes.fuelManagement, "Pages/FuelManagement.jsx")
+    route(StringRoutes.salesTransactions, "./Pages/SalesTransactions/index.jsx"),
+    route(StringRoutes.fuelManagement, "./Pages/FuelManagement/index.jsx"),
+    route(StringRoutes.serviceManagement, "./Pages/ServiceManagement/index.jsx"),
+    route(StringRoutes.inventoryManagement, "./Pages/InventoryManagement/index.jsx"),
   ])
 ] satisfies RouteConfig;
