@@ -1,23 +1,27 @@
-import { NavLink } from "react-router-dom";
-import StringRoutes from "~/Constants/StringRoutes"; 
+import React, { useEffect } from 'react'
 import {
-  UserIcon,
-  LayoutDashboardIcon,
-  FileTextIcon,
-  FuelIcon,
-  WrenchIcon,
-  PackageIcon,
-  Users2Icon,
-  MapPinIcon,
-  GlobeIcon,
+    UserIcon,
+    LayoutDashboardIcon,
+    FileTextIcon,
+    FuelIcon,
+    WrenchIcon,
+    PackageIcon,
+    Settings2Icon,
+    Users2Icon,
+    MapPinIcon,
+    GlobeIcon
 } from 'lucide-react'
 import useToggleDrawer from '~/Hooks/Sidenav/useToggleDrawer'
+import { useLocation, useNavigate } from 'react-router';
+import StringRoutes from '~/Constants/StringRoutes';
 
 /*
  * Sidebar sample 
  * */
 const Sidebar = () => {
   const { isOpen } = useToggleDrawer();
+  const route = new StringRoutes();
+  const { pathname } = useLocation();
 
   return (
     <div className="bg-blue-50 flex flex-col h-full">
@@ -50,17 +54,32 @@ const Sidebar = () => {
           <NavItem
             icon={<LayoutDashboardIcon size={18} />}
             text="Dashboard"
-            active
+            url={StringRoutes.dashboard}
+            active={route.highlightRoute(pathname) === "Dashboard"}
           />
           <NavItem
             icon={<FileTextIcon size={18} />}
             text="Sales Transactions"
+            url={StringRoutes.salesTransactions}
+            active={route.highlightRoute(pathname) === "Sales Transactions"}
           />
-          <NavItem icon={<FuelIcon size={18} />} text="Fuel Management" />
-          <NavItem icon={<WrenchIcon size={18} />} text="Service Management" />
+          <NavItem 
+            icon={<FuelIcon size={18} />} 
+            text="Fuel Management"
+            url={StringRoutes.fuelManagement}
+            active={route.highlightRoute(pathname) === "Fuel Management"}
+          />
+          <NavItem 
+            icon={<WrenchIcon size={18} />} 
+            text="Service Management" 
+            url={StringRoutes.serviceManagement}
+            active={route.highlightRoute(pathname) === "Service Management"}
+          />
           <NavItem
             icon={<PackageIcon size={18} />}
             text="Inventory Management"
+            url={StringRoutes.inventoryManagement}
+            active={route.highlightRoute(pathname) === "Inventory Management"}
           />
         </ul>
       </nav>
@@ -68,14 +87,26 @@ const Sidebar = () => {
   )
 }
 
-const NavItem = ({ icon, text, active = false, indented = false }) => {
+const NavItem = ({
+  icon,
+  text, 
+  active = false, 
+  indented = false,
+  url = "",
+}) => {
   const { isOpen } = useToggleDrawer();
+  const navigate = useNavigate();
+
+  const navigateTo = () => {
+    navigate(url);
+  }
 
   return (
     <li>
       <a
-        href="#"
-        className={`flex items-center px-4 py-2 ${active ? 'bg-blue-100 text-blue-800' : 'text-gray-600 hover:bg-blue-50'} ${indented ? 'pl-8' : ''}`}
+        onClick={navigateTo}
+        href={null}
+        className={`cursor-pointer flex items-center px-4 py-2  ${active ? 'bg-blue-100 text-blue-800' : 'text-gray-600 hover:bg-blue-50'} ${indented ? 'pl-8' : ''}`}
       >
         <span className="mr-3">{icon}</span>
         <span

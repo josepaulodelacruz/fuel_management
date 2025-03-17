@@ -130,7 +130,7 @@ export default [
 
 FOR REACT QUERY STANDARD NAMING CONVENTION FOR IT'S HOOKS
 
-**Strctly adhere to this convention for align code of the collaborators and easy maintainability**
+**Strctly adhere to this convention for alignment of code by the collaborators and easy maintainability**
 
 1. **For Fetching Data** :
 
