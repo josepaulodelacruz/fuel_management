@@ -2,11 +2,12 @@ import { type RouteConfig, index, layout, route } from "@react-router/dev/routes
 import StringRoutes from "./Constants/StringRoutes.js";
 
 export default [
+  
   /*
    * - Layout
    * add your page/views inside the layout
    */
-  layout("./Layouts/DasboardLayout.jsx", [
+  layout("./Layouts/DashboardLayout.jsx", [
     //initial dashboard page
     route(StringRoutes.dashboard, "./Pages/Dashboard/index.jsx"),
     route(StringRoutes.salesTransactions, "./Pages/SalesTransactions/index.jsx"),
