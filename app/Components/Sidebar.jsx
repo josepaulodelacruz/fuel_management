@@ -9,7 +9,7 @@ import {
     Settings2Icon,
     Users2Icon,
     MapPinIcon,
-    GlobeIcon,
+    GlobeIcon
 } from 'lucide-react'
 import useToggleDrawer from '~/Hooks/Sidenav/useToggleDrawer'
 import { useLocation, useNavigate } from 'react-router';
@@ -160,5 +160,4 @@ const AdminNavItem = () => {
   )
 }
 
-export default Sidebar
-
+export default Sidebar;
